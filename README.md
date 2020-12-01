@@ -25,4 +25,4 @@ The subject area is "Spare parts company".
 Entity set:
 * Supplier (Supplier code, Name, Address, Phone)
 * Spare part (Part code, Name, Vendor code, Price, Note)
-* Delivery (Supplier code, Part code, Quantity, Date)
+* Supply (Supplier code, Part code, Quantity, Price, Date)
