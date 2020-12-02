@@ -1,0 +1,68 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css}"/>
+    <link rel="stylesheet"
+          href="../../public/css/styles.css"
+          th:href="@{/css/styles.css}"/>
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Coursework</title>
+</head>
+<body class="bg-light">
+    <header th:replace="fragments/header :: header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Coursework</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Something<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Another</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Text</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-container container py-5">
+        <main layout:fragment="content">
+            <h1>Static content for prototyping purposes only</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent scelerisque neque neque, ac elementum quam dignissim interdum.
+                Phasellus et placerat elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent scelerisque neque neque, ac elementum quam dignissim interdum.
+                Phasellus et placerat elit.
+            </p>
+        </main>
+    </div>
+
+    <footer th:replace="fragments/footer :: footer">
+        <div class="container">
+            This project is a term paper work -
+            <a target="_blank" href="https://github.com/Quatern1on/java-coursework-specific">Github</a>.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
+            th:src="@{/webjars/popper.js/1.16.0/popper.min.js}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"
+            th:src="@{/webjars/bootstrap/4.5.3/js/bootstrap.min.js}"></script>
+</body>
+</html>

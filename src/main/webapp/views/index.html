@@ -1,0 +1,83 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en"
+      layout:decorate="~{layouts/main}"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <section class="pb-5 cards">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card text-center">
+                        <img th:src="@{/images/cart.svg}" class="card-img-top p-4" alt="Supply">
+                        <div class="card-body">
+                            <a th:href="@{/supplies}" class="btn btn-primary">Supplies</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card text-center">
+                        <img th:src="@{/images/gears.svg}" class="card-img-top p-4" alt="Spare parts">
+                        <div class="card-body">
+                            <a th:href="@{/parts}" class="btn btn-primary">Spare parts</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card text-center">
+                        <img th:src="@{/images/van.svg}" class="card-img-top p-4" alt="Supplier">
+                        <div class="card-body">
+                            <a th:href="@{/suppliers}" class="btn btn-primary">Suppliers</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h1>Java Coursework Specific</h1>
+            <p>
+                This is a second - "specific" task for university term paper of a subject "Java cross-platform
+                programming".
+            </p>
+            <h2>Topic</h2>
+            <p>
+                The topic of the term paper is the following:
+                <br>
+                Create a client-server application that implements CRUD functionality (the ability
+                to create, read, update and delete records in the database) on the technology stack:
+            </p>
+            <ul>
+                <li>Maven</li>
+                <li>Tomcat</li>
+                <li>Hibernate</li>
+                <li>MySQL</li>
+                <li>Spring</li>
+                <li>Spring MVC</li>
+            </ul>
+            <p>
+                Implement the logic of data processing in one of three ways:
+            </p>
+            <ul>
+                <li>JDBC</li>
+                <li>Hibernate</li>
+                <li>JPA</li>
+            </ul>
+            <p>
+                The subject area is "Spare parts company".
+                <br>
+                <br>
+                Entity set:
+            </p>
+            <ul>
+                <li>Supplier (Supplier code, Name, Address, Phone)</li>
+                <li>Spare part (Part code, Name, Vendor code, Price, Note)</li>
+                <li>Supply (Supplier code, Part code, Quantity, Price, Date)</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
