@@ -16,6 +16,7 @@ public class SparePartsController {
 
     @RequestMapping(path = "/parts", method = RequestMethod.GET)
     public String parts(Model model) {
+        model.addAttribute("activePage", "parts");
         model.addAttribute("parts", service.listAll());
         return "parts";
     }

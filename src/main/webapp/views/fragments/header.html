@@ -15,16 +15,16 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#" th:href="@{/}">Main<span class="sr-only">(current)</span></a>
+                    <li class="nav-item" th:classappend="${activePage == 'main'} ? active : ''">
+                        <a class="nav-link"  href="#" th:href="@{/}">Main</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" th:classappend="${activePage == 'supplies'} ? active : ''">
                         <a class="nav-link" href="#" th:href="@{/supplies}">Supplies</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" th:classappend="${activePage == 'parts'} ? active : ''">
                         <a class="nav-link" href="#" th:href="@{/parts}">Spare parts</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" th:classappend="${activePage == 'suppliers'} ? active : ''">
                         <a class="nav-link" href="#" th:href="@{/suppliers}">Suppliers</a>
                     </li>
                 </ul>
