@@ -23,3 +23,8 @@ body {
         display: block;
     }
 }
+
+.table .thead-dark th {
+    background-color: #007bff!important;
+    border-color: #1a85ff !important;
+}

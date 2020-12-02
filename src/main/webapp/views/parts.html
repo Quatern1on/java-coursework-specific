@@ -1,0 +1,43 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en"
+      layout:decorate="~{layouts/main}"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+    <main layout:fragment="content">
+        <section>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Vendor code</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Note</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="part : ${parts}">
+                        <td th:text="${part.name}"></td>
+                        <td th:text="${part.vendorCode}"></td>
+                        <td th:text="${part.price}"></td>
+                        <td th:text="${part.note}"></td>
+                        <td>
+                            <a class="btn btn-outline-primary btn-sm" th:href="@{/parts/edit/{id}(id=${part.id})}">
+                                Edit
+                            </a>
+                            <a class="btn btn-outline-danger btn-sm" th:href="@{/parts/delete/{id}(id=${part.id})}">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
