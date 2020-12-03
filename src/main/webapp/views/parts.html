@@ -17,7 +17,7 @@
                         <th scope="col">Vendor code</th>
                         <th scope="col">Price</th>
                         <th scope="col">Note</th>
-                        <th scope="col">Action</th>
+                        <th scope="col" class="action-col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,7 +25,7 @@
                         <td th:text="${part.name}"></td>
                         <td th:text="${part.vendorCode}"></td>
                         <td th:text="${part.price}"></td>
-                        <td th:text="${part.note}"></td>
+                        <td th:utext="${#strings.replace(part.note,'&#10;','<br>')}"></td>
                         <td>
                             <a class="btn btn-outline-primary btn-sm" th:href="@{/parts/edit/{id}(id=${part.id})}">
                                 Edit

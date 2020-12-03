@@ -32,7 +32,7 @@ public class Supply {
     @Column(name = "supply_date")
     private LocalDate date;
 
-    private Double price;
+    private Float price;
 
     private Integer quantity;
 

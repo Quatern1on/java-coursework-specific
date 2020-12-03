@@ -28,3 +28,7 @@ body {
     background-color: #007bff!important;
     border-color: #1a85ff !important;
 }
+
+.action-col {
+    min-width: 128px;
+}

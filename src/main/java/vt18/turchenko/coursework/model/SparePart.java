@@ -25,7 +25,7 @@ public class SparePart {
 
     private String name;
 
-    private Double price;
+    private Float price;
 
     @Column(columnDefinition = "TEXT")
     private String note;
