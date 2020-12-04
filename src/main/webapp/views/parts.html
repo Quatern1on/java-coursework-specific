@@ -11,6 +11,7 @@
     <main layout:fragment="content">
         <section>
             <table class="table table-striped">
+                <caption><a class="btn btn-outline-success" th:href="@{/parts/add}">Add</caption>
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Name</th>
@@ -24,7 +25,7 @@
                     <tr th:each="part : ${parts}">
                         <td th:text="${part.name}"></td>
                         <td th:text="${part.vendorCode}"></td>
-                        <td th:text="${part.price}"></td>
+                        <td th:text="${#numbers.formatDecimal(part.price, 0, 2, 'POINT')}"></td>
                         <td th:utext="${#strings.replace(part.note,'&#10;','<br>')}"></td>
                         <td>
                             <a class="btn btn-outline-primary btn-sm" th:href="@{/parts/edit/{id}(id=${part.id})}">

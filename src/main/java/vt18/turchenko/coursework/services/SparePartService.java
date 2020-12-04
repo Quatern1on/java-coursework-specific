@@ -19,4 +19,18 @@ public class SparePartService {
     public List<SparePart> listAll() {
         return IterableUtils.toList(repository.findAll());
     }
+
+    public void save(SparePart part) {
+        //Round to 2 decimal places before save
+        part.setPrice(Math.round(part.getPrice() * 100.0f) / 100.0f);
+        repository.save(part);
+    }
+
+    public SparePart find(Long id) {
+        return repository.findOne(id);
+    }
+
+    public void delete(Long id) {
+        repository.delete(id);
+    }
 }
