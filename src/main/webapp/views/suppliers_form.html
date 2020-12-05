@@ -1,0 +1,35 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en"
+      layout:decorate="~{layouts/base}"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${header}">Main page</title>
+</head>
+<body>
+    <main layout:fragment="content">
+        <section>
+            <h1 th:text="${header}">Add part</h1>
+            <form action="#" th:action="@{/suppliers/{action}(action=${action})}" th:object="${suppliers}" method="post">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input th:field="*{name}" type="text" class="form-control" id="name">
+                    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="alert alert-danger mt-2"></div>
+                </div>
+                <div class="form-group">
+                    <label for="address" th:field="*{address}">Address</label>
+                    <input th:field="*{address}" type="text" class="form-control" id="address">
+                    <div th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="alert alert-danger mt-2"></div>
+                </div>
+                <div class="form-group">
+                    <label for="phone" th:field="*{phone}">Phone</label>
+                    <input th:field="*{phone}" type="text" class="form-control" id="phone">
+                    <div th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" class="alert alert-danger mt-2"></div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

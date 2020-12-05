@@ -32,3 +32,8 @@ body {
 .action-col {
     min-width: 128px;
 }
+
+.table {
+    border-radius: 6px;
+    overflow: hidden;
+}

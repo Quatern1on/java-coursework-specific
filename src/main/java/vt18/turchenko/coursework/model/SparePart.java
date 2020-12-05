@@ -19,7 +19,6 @@ public class SparePart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //Null is for validation
     private Long id;
 
     @Column(name = "vendor_code")

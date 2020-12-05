@@ -1,0 +1,42 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en"
+      layout:decorate="~{layouts/base}"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Suppliers</title>
+</head>
+<body>
+    <main layout:fragment="content">
+        <section>
+            <table class="table table-striped">
+                <caption><a class="btn btn-outline-success" th:href="@{/suppliers/add}">Add</caption>
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col" class="action-col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="supplier : ${suppliers}">
+                            <td th:text="${supplier.name}"></td>
+                            <td th:text="${supplier.address}"></td>
+                            <td th:text="${supplier.phone}"></td>
+                            <td>
+                                <a class="btn btn-outline-primary btn-sm" th:href="@{/suppliers/edit/{id}(id=${supplier.id})}">
+                                    Edit
+                                </a>
+                                <a class="btn btn-outline-danger btn-sm" th:href="@{/suppliers/delete/{id}(id=${supplier.id})}">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
