@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 @Table(name = "supplier")
@@ -29,4 +30,6 @@ public class Supplier {
             message = "Must be a valid phone number")
     private String phone;
 
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "supplier")
+    private List<Supply> supplies;
 }

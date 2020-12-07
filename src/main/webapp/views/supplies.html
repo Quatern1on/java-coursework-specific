@@ -1,0 +1,48 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en"
+      layout:decorate="~{layouts/base}"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spare parts</title>
+</head>
+<body>
+    <main layout:fragment="content">
+        <section>
+            <table class="table table-striped">
+                <caption><a class="btn btn-outline-success" th:href="@{/supplies/add}">Add</caption>
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Part</th>
+                        <th scope="col">Supplier</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                        <th scope="col" class="action-col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="supply : ${supplies}">
+                        <td th:text="${supply.sparePart.name}"></td>
+                        <td th:text="${supply.supplier.name}"></td>
+                        <td th:text="${supply.date}"></td>
+                        <td th:text="${#numbers.formatDecimal(supply.price, 0, 2, 'POINT')}"></td>
+                        <td th:text="${supply.quantity}"></td>
+                        <td th:text="${#numbers.formatDecimal(supply.price * supply.quantity, 0, 2, 'POINT')}"></td>
+                        <td>
+                            <a class="btn btn-outline-primary btn-sm" th:href="@{/supplies/edit/{id}(id=${supply.id})}">
+                                Edit
+                            </a>
+                            <a class="btn btn-outline-danger btn-sm" th:href="@{/supplies/delete/{id}(id=${supply.id})}">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.sql.Date;
 
 @Entity
 @Table(name = "supply")
@@ -30,7 +30,7 @@ public class Supply {
     private SparePart sparePart;
 
     @Column(name = "supply_date")
-    private LocalDate date;
+    private Date date;
 
     private Float price;
 

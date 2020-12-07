@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.util.List;
 
 @Entity
 @Table(name = "spare_part")
@@ -36,4 +37,7 @@ public class SparePart {
     @Column(columnDefinition = "TEXT")
     @Size(max = 65536, message = "Can not be longer than 65536 symbols")
     private String note;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "sparePart")
+    private List<Supply> supplies;
 }
