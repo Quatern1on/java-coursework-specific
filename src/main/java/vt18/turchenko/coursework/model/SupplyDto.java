@@ -24,7 +24,7 @@ public class SupplyDto {
     private Long sparePart;
 
     @Past(message = "You cannot buy something in the future")
-    @NotNull(message = "You mast select valid date")
+    @NotNull(message = "You must select valid date")
     private Date date;
 
     @Max(value = 999999, message = "Maximum value is 999999")

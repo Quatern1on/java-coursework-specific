@@ -29,7 +29,7 @@ public class SparePart {
     @Size(min = 3, max = 256, message = "Must be from 3 to 256 symbols")
     private String name;
 
-    @Positive(message = "Must be positive")
+    @Min(message = "Must be positive", value=0)
     @Max(value = 999999, message = "Maximum value is 999999")
     @NotNull(message = "Can not be empty")
     private Float price;
